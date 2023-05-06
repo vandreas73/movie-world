@@ -16,13 +16,15 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
+import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     NavigationComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    PopularMoviesComponent
   ],
   imports: [
     BrowserModule,
