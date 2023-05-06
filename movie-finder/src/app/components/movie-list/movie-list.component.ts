@@ -13,7 +13,7 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.movieService.getPopular().then(movieList => this.movieList = movieList);
+    this.movieService.getPopular().subscribe(movieList => this.movieList = movieList);
   }
 
   movieList = {} as MovieList;

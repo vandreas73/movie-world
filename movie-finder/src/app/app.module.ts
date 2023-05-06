@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
