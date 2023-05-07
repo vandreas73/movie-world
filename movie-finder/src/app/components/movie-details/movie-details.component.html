@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.release_date }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="getBackdropUrl()">
+    <mat-card-content>
+        <p>{{ movie.overview }}</p>
+        <p><strong>Genres:</strong> {{ getGenres() }}</p>
+        <p><strong>Production Companies:</strong> {{ getProductionCompanies() }}</p>
+        <p><strong>Production Countries:</strong> {{ getProductionCountries() }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button><a href="https://www.imdb.com/title/{{ movie.imdb_id }}/" target="_blank">View on
+                IMDB</a></button>
+        <!-- <button mat-button><a href="{{ getTrailerUrl() }}" target="_blank">Watch Trailer</a></button> -->
+    </mat-card-actions>
+</mat-card>

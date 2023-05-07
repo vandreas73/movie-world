@@ -22,6 +22,7 @@ import { SearchComponent } from './components/search/search.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatInputModule} from '@angular/material/input';
     MovieCardComponent,
     PopularMoviesComponent,
     SearchMoviesComponent,
-    SearchComponent
+    SearchComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
