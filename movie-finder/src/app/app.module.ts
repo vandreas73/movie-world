@@ -17,6 +17,11 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
 import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
+import { SearchMoviesComponent } from './components/search-movies/search-movies.component';
+import { SearchComponent } from './components/search/search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import { PopularMoviesComponent } from './components/popular-movies/popular-movi
     MovieListComponent,
     NavigationComponent,
     MovieCardComponent,
-    PopularMoviesComponent
+    PopularMoviesComponent,
+    SearchMoviesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,9 @@ import { PopularMoviesComponent } from './components/popular-movies/popular-movi
     MatCardModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

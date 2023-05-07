@@ -2,13 +2,13 @@
     
     <img
       mat-card-image
-      src="{{'https://image.tmdb.org/t/p/w500/' + movieElement?.poster_path}}"
+      src="{{movieElement?.poster_path ? 'https://image.tmdb.org/t/p/w500/' + movieElement?.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg'}}"
     />
     <mat-card-header>
         <mat-card-title>{{movieElement?.title}}</mat-card-title>
       </mat-card-header>
     <mat-card-content>
-      <p>Original({{movieElement?.original_language}}): {{movieElement?.original_title}}</p>
+      <p>Original ({{movieElement?.original_language}}): {{movieElement?.original_title}}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>

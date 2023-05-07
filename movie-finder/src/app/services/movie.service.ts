@@ -11,8 +11,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  searchMovies(query: string) {
-
+  searchMovies(query: string): Observable<MovieList> {
+    return this.http.get<MovieList>(`${environment.apiUrl}/search/movie?api_key=${environment.apiKey}&query=${query}&include_adult=false`);
   }
 
   getPopular(): Observable<MovieList> {
