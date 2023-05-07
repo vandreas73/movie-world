@@ -20,7 +20,7 @@ export class MovieDetailsComponent {
     })
   }
 
-  getBackdropUrl(): string {
+  getPosterUrl(): string {
     return this.movie.poster_path ? 'https://image.tmdb.org/t/p/original' + this.movie.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
   }
 

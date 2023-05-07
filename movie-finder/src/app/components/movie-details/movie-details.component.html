@@ -1,18 +1,30 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>{{ movie.title }}</mat-card-title>
-        <mat-card-subtitle>{{ movie.tagline }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="getBackdropUrl()" alt="{{ movie.title }} backdrop">
-    <mat-card-content>
-        <p>{{ movie.overview }}</p>
-        <p><strong>Release date:</strong> {{ movie.release_date | date:'mediumDate' }}</p>
-        <p><strong>Genres:</strong> {{ getGenres() }}</p>
-        <p><strong>Production Companies:</strong> {{ getProductionCompanies() }}</p>
-        <p><strong>Production Countries:</strong> {{ getProductionCountries() }}</p>
+  <mat-card class="movie-card">
+    <mat-card-content class="movie-content">
+      <div class="movie-poster-container">
+        <img src="{{ movie.poster_path ? 'https://image.tmdb.org/t/p/w500/' + movie.poster_path : 'assets/no-image-available.png' }}" class="movie-poster">
+      </div>
+      <div class="movie-details">
+        <h2 class="movie-title">{{ movie.title }}</h2>
+        <div class="movie-info">
+          <div class="movie-info-row">
+            <span class="movie-info-label">Release Date:</span>
+            <span class="movie-info-value">{{ movie.release_date }}</span>
+          </div>
+          <div class="movie-info-row">
+            <span class="movie-info-label">Runtime:</span>
+            <span class="movie-info-value">{{ movie.runtime }} mins</span>
+          </div>
+          <div class="movie-info-row">
+            <span class="movie-info-label">Genres:</span>
+            <span class="movie-info-value">{{ getGenres() }}</span>
+          </div>
+          <div class="movie-info-row">
+            <span class="movie-info-label">Overview:</span>
+            <span class="movie-info-value">{{ movie.overview }}</span>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
-    <mat-card-actions>
-        <a href="https://www.imdb.com/title/{{ movie.imdb_id }}/" target="_blank"><button mat-raised-button color="primary">View on IMDB</button></a>
-        <!-- <button mat-button><a href="{{ getTrailerUrl() }}" target="_blank">Watch Trailer</a></button> -->
-    </mat-card-actions>
-</mat-card>
+  </mat-card>
+  
+  

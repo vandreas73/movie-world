@@ -2,7 +2,9 @@
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex.lg="25%" fxFlex.xl="20%" 
         *ngFor="let movieElement of movieList?.results">
-            <app-movie-card [movieElement]="movieElement"></app-movie-card>
+            <a href="/movie/{{movieElement?.id}}">
+                <app-movie-card [movieElement]="movieElement"></app-movie-card>
+            </a>
         </div>
     </div>
 </div>
