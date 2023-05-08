@@ -23,7 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { ActorsListComponent } from './components/movie-actors/actors-list.component';
+import { ActorsListComponent } from './components/movie-details/actors-list/actors-list.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 import { ActorCreditsComponent } from './components/actor-details/actor-credits/actor-credits.component';
 import { RecommendedMoviesComponent } from './components/movie-details/recommended-movies/recommended-movies.component';
