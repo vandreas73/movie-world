@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-content>
+        <div class="movie-poster-container">
+            <img src="{{ tv.poster_path ? 'https://image.tmdb.org/t/p/w500/' + tv.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg' }}"
+                class="movie-poster">
+        </div>
+        <div class="movie-details">
+            <h2 class="movie-title">{{ tv.name }}</h2>
+            <div class="movie-info">
+                <div class="movie-info-row" *ngIf="tv.first_air_date">
+                    <span class="movie-info-label">First air year:</span>
+                    <span class="movie-info-value">{{ tv.first_air_date.substring(0, 4) }}.</span>
+                </div>
+                <div class="movie-info-row" *ngIf="tv.episode_run_time">
+                    <span class="movie-info-label">Episode runtime:</span>
+                    <span class="movie-info-value">{{ tv.episode_run_time }} mins</span>
+                </div>
+                <div class="movie-info-row" *ngIf="tv.genres">
+                    <span class="movie-info-label">Genres:</span>
+                    <span class="movie-info-value">{{ getGenres() }}</span>
+                </div>
+                <div class="movie-info-row" *ngIf="tv.overview">
+                    <span class="movie-info-label">Overview:</span>
+                    <span class="movie-info-value">{{ tv.overview }}</span>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<app-actors-list mediaType="tv"></app-actors-list>

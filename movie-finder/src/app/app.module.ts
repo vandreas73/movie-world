@@ -22,15 +22,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
-import { ActorsListComponent } from './components/movies/movie-details/actors-list/actors-list.component';
-import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
-import { ActorCreditsComponent } from './components/actor-details/actor-credits/actor-credits.component';
+import { ActorsListComponent } from './components/actors/actors-list/actors-list.component';
+import { ActorDetailsComponent } from './components/actors/actor-details/actor-details.component';
+import { ActorCreditsComponent } from './components/actors/actor-details/actor-credits/actor-credits.component';
 import { RecommendedMoviesComponent } from './components/movies/movie-details/recommended-movies/recommended-movies.component';
 import { ListCardComponent } from './components/list-card/list-card.component';
 import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
 import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
 import { TvListComponent } from './components/tv-series/series-list/series-list.component';
 import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
+import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs
     ListOfCardsComponent,
     PopularSeriesComponent,
     TvListComponent,
-    SearchTvsComponent
+    SearchTvsComponent,
+    TvDetailsComponent
   ],
   imports: [
     BrowserModule,

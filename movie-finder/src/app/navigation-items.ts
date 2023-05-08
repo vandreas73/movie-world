@@ -6,4 +6,5 @@ export class NavigationItems {
     public static actorDetails: string = "person/:id";
     public static popularTvSeries: string = "popular-tv";
     public static searchTvs: string = "search-tv";
+    public static tvDetails: string = "tv/:id";
 }
