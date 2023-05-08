@@ -1,4 +1,4 @@
-export interface Root {
+export interface TvList {
     page: number
     results: TvListElement[]
     total_results: number

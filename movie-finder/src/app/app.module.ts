@@ -28,6 +28,8 @@ import { ActorCreditsComponent } from './components/actor-details/actor-credits/
 import { RecommendedMoviesComponent } from './components/movies/movie-details/recommended-movies/recommended-movies.component';
 import { ListCardComponent } from './components/list-card/list-card.component';
 import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
+import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
+import { SeriesListComponent } from './components/tv-series/series-list/series-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.c
     ActorCreditsComponent,
     RecommendedMoviesComponent,
     ListCardComponent,
-    ListOfCardsComponent
+    ListOfCardsComponent,
+    PopularSeriesComponent,
+    SeriesListComponent
   ],
   imports: [
     BrowserModule,

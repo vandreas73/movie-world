@@ -28,6 +28,7 @@ export class MovieListComponent implements OnInit {
     listObject.page = this.movieList?.page || 0;
     listObject.total_pages = this.movieList?.page || 0;
     listObject.total_results = this.movieList?.total_results || 0;
+    
     listObject.results = [];
     this.movieList?.results.forEach(movie => {
       listObject.results.push(new ListCardElement(
