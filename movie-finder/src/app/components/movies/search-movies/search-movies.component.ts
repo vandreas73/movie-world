@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ViewChild } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { MovieList } from 'src/app/models/movie-list';
 import { MovieService } from 'src/app/services/movie.service';
+import { MovieListComponent } from '../movie-list/movie-list.component';
 
 @Component({
   selector: 'app-search-movies',
@@ -9,12 +10,16 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./search-movies.component.scss']
 })
 export class SearchMoviesComponent {
-  constructor(private movieService: MovieService) {
-  }
+  @ViewChild(MovieListComponent)
+  private movieListComponent?: MovieListComponent;
+
+  constructor(private movieService: MovieService) { }
 
   movieList = new Observable<MovieList>();
 
   searchMovies(query: string) {
     this.movieList = this.movieService.searchMovies(query);
+    this.movieListComponent?.refreshList();
   }
+
 }

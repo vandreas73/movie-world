@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TvList } from 'src/app/models/tv-list';
 import { TvService } from 'src/app/services/tv.service';
+import { TvListComponent } from '../series-list/series-list.component';
 
 @Component({
   selector: 'app-search-tvs',
@@ -9,6 +10,8 @@ import { TvService } from 'src/app/services/tv.service';
   styleUrls: ['./search-tvs.component.scss']
 })
 export class SearchTvsComponent {
+  @ViewChild(TvListComponent)
+  private tvListComponent?: TvListComponent;
 
   constructor(private tvService: TvService) { }
 
@@ -16,5 +19,6 @@ export class SearchTvsComponent {
 
   search(query: string) {
     this.tvListObservable = this.tvService.search(query);
+    this.tvListComponent?.refreshList();
   }
 }

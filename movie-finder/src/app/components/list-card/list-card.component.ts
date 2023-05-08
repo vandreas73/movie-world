@@ -12,7 +12,7 @@ export class ListCardComponent {
 }
 
 export class ListCardElement {
-  constructor(public poster_path: string,
+  constructor(public poster_path: string | null = null,
     public title: string,
     public url_path: string,
     public content_line1: string = '',

@@ -9,10 +9,14 @@ import { ListCardElement } from '../../list-card/list-card.component';
   templateUrl: './series-list.component.html',
   styleUrls: ['./series-list.component.scss']
 })
-export class SeriesListComponent implements OnInit {
+export class TvListComponent implements OnInit {
   @Input() tvObservable?: Observable<TvList>;
   tvList?: TvList;
   ngOnInit(): void {
+    this.refreshList();
+  }
+
+  refreshList(){
     this.tvObservable?.subscribe(tvList => {
       this.tvList = tvList;
     });
@@ -28,7 +32,7 @@ export class SeriesListComponent implements OnInit {
     listObject.results = [];
     this.tvList?.results.forEach(tv => {
       listObject.results.push(new ListCardElement(
-        tv.poster_path ? 'https://image.tmdb.org/t/p/w500/' + tv.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg',
+        tv.poster_path,
         tv.name,
         `/tv/${tv.id}`,
         `Original (${tv.original_language}): ${tv.original_name}`

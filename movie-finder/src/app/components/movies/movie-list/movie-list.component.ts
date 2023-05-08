@@ -15,6 +15,10 @@ export class MovieListComponent implements OnInit {
   @Input() cardCount?: number;
   movieList?: MovieList;
   ngOnInit(): void {
+    this.refreshList();
+  }
+
+  refreshList() {
     this.movieObservable?.subscribe(movieList => {
       this.movieList = movieList;
       if (this.cardCount)
@@ -28,11 +32,11 @@ export class MovieListComponent implements OnInit {
     listObject.page = this.movieList?.page || 0;
     listObject.total_pages = this.movieList?.page || 0;
     listObject.total_results = this.movieList?.total_results || 0;
-    
+
     listObject.results = [];
     this.movieList?.results.forEach(movie => {
       listObject.results.push(new ListCardElement(
-        movie.poster_path ? 'https://image.tmdb.org/t/p/w500/' + movie.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg',
+        movie.poster_path,
         movie.title,
         `/movie/${movie.id}`,
         `Original (${movie.original_language}): ${movie.original_title}`
