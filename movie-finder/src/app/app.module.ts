@@ -5,28 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { MovieCardComponent } from './components/movies/movie-card/movie-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
-import { PopularMoviesComponent } from './components/popular-movies/popular-movies.component';
-import { SearchMoviesComponent } from './components/search-movies/search-movies.component';
+import { PopularMoviesComponent } from './components/movies/popular-movies/popular-movies.component';
+import { SearchMoviesComponent } from './components/movies/search-movies/search-movies.component';
 import { SearchComponent } from './components/search/search.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { ActorsListComponent } from './components/movie-details/actors-list/actors-list.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
+import { ActorsListComponent } from './components/movies/movie-details/actors-list/actors-list.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 import { ActorCreditsComponent } from './components/actor-details/actor-credits/actor-credits.component';
-import { RecommendedMoviesComponent } from './components/movie-details/recommended-movies/recommended-movies.component';
+import { RecommendedMoviesComponent } from './components/movies/movie-details/recommended-movies/recommended-movies.component';
+import { ListCardComponent } from './components/list-card/list-card.component';
+import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { RecommendedMoviesComponent } from './components/movie-details/recommend
     ActorsListComponent,
     ActorDetailsComponent,
     ActorCreditsComponent,
-    RecommendedMoviesComponent
+    RecommendedMoviesComponent,
+    ListCardComponent,
+    ListOfCardsComponent
   ],
   imports: [
     BrowserModule,
