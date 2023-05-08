@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieActorsComponent } from './components/movie-actors/movie-actors.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     PopularMoviesComponent,
     SearchMoviesComponent,
     SearchComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MovieActorsComponent
   ],
   imports: [
     BrowserModule,
