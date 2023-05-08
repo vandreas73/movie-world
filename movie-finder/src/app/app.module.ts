@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MovieCardComponent } from './components/movies/movie-card/movie-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +34,6 @@ import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.c
     AppComponent,
     MovieListComponent,
     NavigationComponent,
-    MovieCardComponent,
     PopularMoviesComponent,
     SearchMoviesComponent,
     SearchComponent,
