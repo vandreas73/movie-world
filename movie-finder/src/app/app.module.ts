@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { ActorsListComponent } from './components/movie-actors/actors-list.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
+import { ActorCreditsComponent } from './components/actor-details/actor-credits/actor-credits.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ActorDetailsComponent } from './components/actor-details/actor-details.
     SearchComponent,
     MovieDetailsComponent,
     ActorsListComponent,
-    ActorDetailsComponent
+    ActorDetailsComponent,
+    ActorCreditsComponent
   ],
   imports: [
     BrowserModule,

@@ -15,9 +15,10 @@
                     <span class="info-value">{{ actor.biography }}</span>
                 </div>
                 <div class="info-row">
-                    <a mat-button [href]="'https://www.imdb.com/name/' + actor.imdb_id" target="_blank">IMDb</a>
+                    <a mat-raised-button [href]="'https://www.imdb.com/name/' + actor.imdb_id" target="_blank">IMDb</a>
                 </div>
             </div>
         </div>
     </mat-card-content>
 </mat-card>
+<app-actor-credits></app-actor-credits>

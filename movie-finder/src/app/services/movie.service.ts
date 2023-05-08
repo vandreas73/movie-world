@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environments';
 import { MovieDetails } from '../models/movie-details';
 import { MovieCredits } from '../models/movie-credits';
 import { Actor } from '../models/actor';
+import { ActorCredits } from '../models/actor-credits';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,9 @@ export class MovieService {
 
   getActorDetails(id: number): Observable<Actor> {
     return this.http.get<Actor>(`${environment.apiUrl}/person/${id}?${environment.apiKeyParam}`)
+  }
+  
+  getActorCredits(id: number): Observable<ActorCredits> {
+    return this.http.get<ActorCredits>(`${environment.apiUrl}/person/${id}/combined_credits?${environment.apiKeyParam}`)
   }
 }
