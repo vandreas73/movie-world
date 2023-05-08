@@ -1,2 +1,2 @@
 <app-search (newSearch)="searchMovies($event)"></app-search>
-<app-movie-list *ngIf="movieList" [movieList]="movieList | async"></app-movie-list>
+<app-movie-list *ngIf="movieList" [movieObservable]="movieList"></app-movie-list>

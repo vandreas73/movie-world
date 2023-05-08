@@ -1,2 +1,2 @@
 <h2>Similar movies:</h2>
-<app-movie-list [movieList]="recommendedMovies"></app-movie-list>
+<app-movie-list *ngIf="recommendedMovies" [movieObservable]="recommendedMovies" [cardCount]="4"></app-movie-list>

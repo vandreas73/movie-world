@@ -3,16 +3,27 @@ import { MovieList } from 'src/app/models/movie-list';
 import { MovieService } from 'src/app/services/movie.service';
 import { ListOfCardsObject } from '../../list-of-cards/list-of-cards.component';
 import { ListCardElement } from '../../list-card/list-card.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent {
-  @Input() movieList: MovieList | null | undefined;
+export class MovieListComponent implements OnInit {
+  @Input() movieObservable?: Observable<MovieList>;
+  @Input() cardCount?: number;
+  movieList?: MovieList;
+  ngOnInit(): void {
+    this.movieObservable?.subscribe(movieList => {
+      this.movieList = movieList;
+      if (this.cardCount)
+        this.movieList.results = movieList.results.slice(0, this.cardCount);
+    });
+  }
 
-  getListObject(): ListOfCardsObject {
+
+  getListObject(): ListOfCardsObject | null {
     let listObject = {} as ListOfCardsObject;
     listObject.page = this.movieList?.page || 0;
     listObject.total_pages = this.movieList?.page || 0;
