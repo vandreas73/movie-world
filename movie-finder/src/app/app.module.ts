@@ -26,6 +26,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { ActorsListComponent } from './components/movie-actors/actors-list.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 import { ActorCreditsComponent } from './components/actor-details/actor-credits/actor-credits.component';
+import { RecommendedMoviesComponent } from './components/movie-details/recommended-movies/recommended-movies.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ActorCreditsComponent } from './components/actor-details/actor-credits/
     MovieDetailsComponent,
     ActorsListComponent,
     ActorDetailsComponent,
-    ActorCreditsComponent
+    ActorCreditsComponent,
+    RecommendedMoviesComponent
   ],
   imports: [
     BrowserModule,

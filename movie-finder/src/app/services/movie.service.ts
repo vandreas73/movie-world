@@ -38,4 +38,8 @@ export class MovieService {
   getActorCredits(id: number): Observable<ActorCredits> {
     return this.http.get<ActorCredits>(`${environment.apiUrl}/person/${id}/combined_credits?${environment.apiKeyParam}`)
   }
+  
+  getRecommendedMovies(movieId: number): Observable<MovieList> {
+    return this.http.get<MovieList>(`${environment.apiUrl}/movie/${movieId}/recommendations?${environment.apiKeyParam}`)
+  }
 }
