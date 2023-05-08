@@ -4,11 +4,11 @@ import { MovieCredits } from 'src/app/models/movie-credits';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
-  selector: 'app-movie-actors',
-  templateUrl: './movie-actors.component.html',
-  styleUrls: ['./movie-actors.component.scss']
+  selector: 'app-actors-list',
+  templateUrl: './actors-list.component.html',
+  styleUrls: ['./actors-list.component.scss']
 })
-export class MovieActorsComponent implements OnInit {
+export class ActorsListComponent implements OnInit {
   credits = {} as MovieCredits;
 
   constructor(private movieService: MovieService,

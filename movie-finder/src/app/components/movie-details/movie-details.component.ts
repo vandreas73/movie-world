@@ -21,7 +21,7 @@ export class MovieDetailsComponent {
   }
 
   getPosterUrl(): string {
-    return this.movie.poster_path ? 'https://image.tmdb.org/t/p/original' + this.movie.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
+    return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + this.movie.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
   }
 
   getGenres(): string {

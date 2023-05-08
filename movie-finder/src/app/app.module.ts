@@ -23,7 +23,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { MovieActorsComponent } from './components/movie-actors/movie-actors.component';
+import { ActorsListComponent } from './components/movie-actors/actors-list.component';
+import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MovieActorsComponent } from './components/movie-actors/movie-actors.com
     SearchMoviesComponent,
     SearchComponent,
     MovieDetailsComponent,
-    MovieActorsComponent
+    ActorsListComponent,
+    ActorDetailsComponent
   ],
   imports: [
     BrowserModule,

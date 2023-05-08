@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content>
+        <div class="poster-container">
+            <img class="poster" mat-card-image [src]="getProfileImagePath()" alt="{{ actor.name }}">
+        </div>
+        <div class="details">
+            <h2 class="title">{{ actor.name }}</h2>
+            <div class="info">
+                <div class="info-row">
+                    <span class="info-label">Born on: </span>
+                    <span class="info-value">{{ actor.birthday }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Biography: </span>
+                    <span class="info-value">{{ actor.biography }}</span>
+                </div>
+                <div class="info-row">
+                    <a mat-button [href]="'https://www.imdb.com/name/' + actor.imdb_id" target="_blank">IMDb</a>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
