@@ -30,6 +30,7 @@ import { ListCardComponent } from './components/list-card/list-card.component';
 import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
 import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
 import { SeriesListComponent } from './components/tv-series/series-list/series-list.component';
+import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SeriesListComponent } from './components/tv-series/series-list/series-l
     ListCardComponent,
     ListOfCardsComponent,
     PopularSeriesComponent,
-    SeriesListComponent
+    SeriesListComponent,
+    SearchTvsComponent
   ],
   imports: [
     BrowserModule,

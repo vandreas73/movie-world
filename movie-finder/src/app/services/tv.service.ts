@@ -8,6 +8,9 @@ import { environment } from 'src/environments/environments';
   providedIn: 'root'
 })
 export class TvService {
+  search(query: string): Observable<TvList> {
+    return this.http.get<TvList>(`${environment.apiUrl}/search/tv?${environment.apiKeyParam}&query=${query}&include_adult=false`);
+  }
 
   constructor(private http: HttpClient) { }
 

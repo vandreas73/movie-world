@@ -6,6 +6,7 @@ import { SearchMoviesComponent } from './components/movies/search-movies/search-
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { ActorDetailsComponent } from './components/actor-details/actor-details.component';
 import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
+import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
 
 const routes: Routes = [
   { path: NavigationItems.popularMovies, component: PopularMoviesComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: NavigationItems.movieDetails, component: MovieDetailsComponent },
   { path: NavigationItems.actorDetails, component:  ActorDetailsComponent},
   { path: NavigationItems.popularTvSeries, component:  PopularSeriesComponent},
+  { path: NavigationItems.searchTvs, component:  SearchTvsComponent},
 ];
 
 @NgModule({
