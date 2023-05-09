@@ -19,7 +19,7 @@ export class SearchMoviesComponent {
 
   searchMovies(query: string) {
     this.movieList = this.movieService.searchMovies(query);
-    this.movieListComponent?.refreshList();
+    this.movieList.subscribe(_ => this.movieListComponent?.refreshList());
   }
 
 }

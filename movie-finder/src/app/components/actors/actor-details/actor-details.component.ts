@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs';
 import { Actor } from 'src/app/models/actor';
 import { MovieService } from 'src/app/services/movie.service';
 

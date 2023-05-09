@@ -13,7 +13,9 @@ import { Observable } from 'rxjs';
 export class MovieListComponent implements OnInit {
   @Input() movieObservable?: Observable<MovieList>;
   @Input() cardCount?: number;
+  @Input() showCardsFrom: number = 0;
   movieList?: MovieList;
+
   ngOnInit(): void {
     this.refreshList();
   }
@@ -22,7 +24,7 @@ export class MovieListComponent implements OnInit {
     this.movieObservable?.subscribe(movieList => {
       this.movieList = movieList;
       if (this.cardCount)
-        this.movieList.results = movieList.results.slice(0, this.cardCount);
+        this.movieList.results = movieList.results.slice(this.showCardsFrom, this.showCardsFrom + this.cardCount);
     });
   }
 

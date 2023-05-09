@@ -10,7 +10,6 @@ import { ListCardElement } from '../list-card/list-card.component';
 })
 export class ListOfCardsComponent {
   @Input() listObject: ListOfCardsObject | null | undefined;
-
 }
 
 export interface ListOfCardsObject {

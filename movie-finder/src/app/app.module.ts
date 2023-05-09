@@ -32,6 +32,7 @@ import { PopularSeriesComponent } from './components/tv-series/popular-series/po
 import { TvListComponent } from './components/tv-series/series-list/series-list.component';
 import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
 import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

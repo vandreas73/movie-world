@@ -19,6 +19,6 @@ export class SearchTvsComponent {
 
   search(query: string) {
     this.tvListObservable = this.tvService.search(query);
-    this.tvListComponent?.refreshList();
+    this.tvListObservable.subscribe(_ => this.tvListComponent?.refreshList());
   }
 }
