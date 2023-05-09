@@ -9,7 +9,7 @@
                 {{season.episode_count}} episodes
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p><b>Overview:</b> {{season.overview}}</p>
+        <p *ngIf="season.overview"><b>Overview:</b> {{season.overview}}</p>
         <app-episode [tvId]="tvDetails?.id" [seasonNumber]="season.season_number"></app-episode>
     </mat-expansion-panel>
 </mat-accordion>

@@ -5,9 +5,9 @@ import { NavigationItems } from './navigation-items';
 import { SearchMoviesComponent } from './components/movies/search-movies/search-movies.component';
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { ActorDetailsComponent } from './components/actors/actor-details/actor-details.component';
-import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
-import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
-import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details.component';
+import { PopularSeriesComponent } from './components/tv-shows/popular-series/popular-series.component';
+import { SearchTvsComponent } from './components/tv-shows/search-tvs/search-tvs.component';
+import { TvDetailsComponent } from './components/tv-shows/tv-details/tv-details.component';
 
 const routes: Routes = [
   { path: NavigationItems.popularMovies, component: PopularMoviesComponent },

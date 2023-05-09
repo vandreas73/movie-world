@@ -22,7 +22,7 @@ export class RecommendedMoviesComponent {
     this.route.params.subscribe(params => {
       this.recommendedMovies = this.movieService.getRecommendedMovies(params['id']);
       this.recommendedMovies.subscribe(movieList => {
-        this.allPagesCount = movieList.total_results;
+        this.allPagesCount = movieList.results.length;
       });
     });
   }

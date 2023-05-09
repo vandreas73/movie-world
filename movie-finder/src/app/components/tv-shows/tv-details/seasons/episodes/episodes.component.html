@@ -3,9 +3,9 @@
     <mat-expansion-panel hideToggle *ngFor="let episode of tvSeasons?.episodes">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                {{episode.id}}. {{episode.name}}
+                {{episode.episode_number}}. {{episode.name}}
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <p>{{episode.overview}}</p>
+        <p *ngIf="episode.overview">{{episode.overview}}</p>
     </mat-expansion-panel>
 </mat-accordion>

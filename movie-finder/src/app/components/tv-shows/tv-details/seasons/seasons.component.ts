@@ -6,9 +6,9 @@ import { TvService } from 'src/app/services/tv.service';
 
 @Component({
   selector: 'app-episodes',
-  templateUrl: './episodes.component.html',
-  styleUrls: ['./episodes.component.scss']
+  templateUrl: './seasons.component.html',
+  styleUrls: ['./seasons.component.scss']
 })
-export class EpisodesComponent {
+export class SeasonsComponent {
   @Input() tvDetails?: TvDetails;
 }

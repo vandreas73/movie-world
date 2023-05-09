@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TvList } from 'src/app/models/tv-list';
 import { TvService } from 'src/app/services/tv.service';
-import { TvListComponent } from '../series-list/series-list.component';
+import { TvListComponent } from '../tv-list/tv-list.component';
 
 @Component({
   selector: 'app-search-tvs',

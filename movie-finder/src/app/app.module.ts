@@ -28,14 +28,14 @@ import { ActorCreditsComponent } from './components/actors/actor-details/actor-c
 import { RecommendedMoviesComponent } from './components/movies/movie-details/recommended-movies/recommended-movies.component';
 import { ListCardComponent } from './components/list-card/list-card.component';
 import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
-import { PopularSeriesComponent } from './components/tv-series/popular-series/popular-series.component';
-import { TvListComponent } from './components/tv-series/series-list/series-list.component';
-import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
-import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details.component';
+import { PopularSeriesComponent } from './components/tv-shows/popular-series/popular-series.component';
+import { TvListComponent } from './components/tv-shows/tv-list/tv-list.component';
+import { SearchTvsComponent } from './components/tv-shows/search-tvs/search-tvs.component';
+import { TvDetailsComponent } from './components/tv-shows/tv-details/tv-details.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { EpisodesComponent } from './components/tv-series/tv-details/episodes/episodes.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { EpisodeComponent } from './components/tv-series/tv-details/episodes/episode/episode.component';
+import { SeasonsComponent } from './components/tv-shows/tv-details/seasons/seasons.component';
+import { EpisodesComponent } from './components/tv-shows/tv-details/seasons/episodes/episodes.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +56,8 @@ import { EpisodeComponent } from './components/tv-series/tv-details/episodes/epi
     TvListComponent,
     SearchTvsComponent,
     TvDetailsComponent,
+    SeasonsComponent,
     EpisodesComponent,
-    EpisodeComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,10 +4,10 @@ import { TvService } from 'src/app/services/tv.service';
 
 @Component({
   selector: 'app-episode',
-  templateUrl: './episode.component.html',
-  styleUrls: ['./episode.component.scss']
+  templateUrl: './episodes.component.html',
+  styleUrls: ['./episodes.component.scss']
 })
-export class EpisodeComponent implements OnInit {
+export class EpisodesComponent implements OnInit {
   tvSeasons?: TvSeasons;
   @Input() tvId?: number;
   @Input() seasonNumber?: number;

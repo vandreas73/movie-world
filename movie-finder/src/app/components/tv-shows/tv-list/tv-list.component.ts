@@ -5,9 +5,9 @@ import { TvList } from 'src/app/models/tv-list';
 import { ListCardElement } from '../../list-card/list-card.component';
 
 @Component({
-  selector: 'app-series-list',
-  templateUrl: './series-list.component.html',
-  styleUrls: ['./series-list.component.scss']
+  selector: 'app-tv-list',
+  templateUrl: './tv-list.component.html',
+  styleUrls: ['./tv-list.component.scss']
 })
 export class TvListComponent implements OnInit {
   @Input() tvObservable?: Observable<TvList>;
