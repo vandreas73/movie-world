@@ -33,6 +33,9 @@ import { TvListComponent } from './components/tv-series/series-list/series-list.
 import { SearchTvsComponent } from './components/tv-series/search-tvs/search-tvs.component';
 import { TvDetailsComponent } from './components/tv-series/tv-details/tv-details.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { EpisodesComponent } from './components/tv-series/tv-details/episodes/episodes.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { EpisodeComponent } from './components/tv-series/tv-details/episodes/episode/episode.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PopularSeriesComponent,
     TvListComponent,
     SearchTvsComponent,
-    TvDetailsComponent
+    TvDetailsComponent,
+    EpisodesComponent,
+    EpisodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

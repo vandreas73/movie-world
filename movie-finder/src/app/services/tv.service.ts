@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environments';
 import { TvDetails } from '../models/tv-details';
 import { MovieCredits } from '../models/movie-credits';
+import { TvSeasons } from '../models/tv-seasons';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,9 @@ export class TvService {
   
   getCredits(id: number): Observable<MovieCredits>{
     return this.http.get<MovieCredits>(`${environment.apiUrl}/tv/${id}/credits?${environment.apiKeyParam}`);
-
+  }
+  
+  getSeasons(tvId: number, seasonNumber: number): Observable<TvSeasons>{
+    return this.http.get<TvSeasons>(`${environment.apiUrl}/tv/${tvId}/season/${seasonNumber}?${environment.apiKeyParam}`);
   }
 }

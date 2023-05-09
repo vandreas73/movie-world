@@ -1,0 +1,15 @@
+<h2>Episodes</h2>
+<mat-accordion>
+    <mat-expansion-panel hideToggle *ngFor="let season of tvDetails?.seasons">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{season.season_number}}. {{season.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{season.episode_count}} episodes
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p><b>Overview:</b> {{season.overview}}</p>
+        <app-episode [tvId]="tvDetails?.id" [seasonNumber]="season.season_number"></app-episode>
+    </mat-expansion-panel>
+</mat-accordion>
