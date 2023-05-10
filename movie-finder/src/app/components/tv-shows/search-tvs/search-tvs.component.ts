@@ -15,9 +15,10 @@ export class SearchTvsComponent {
 
   constructor(private tvService: TvService) { }
 
-  tvListObservable = new Observable<TvList>();
+  tvListObservable?: Observable<TvList>;
 
   search(query: string) {
+    this.tvListComponent?.startLoading();
     this.tvListObservable = this.tvService.search(query);
     this.tvListObservable.subscribe(_ => this.tvListComponent?.refreshList());
   }

@@ -15,9 +15,10 @@ export class SearchMoviesComponent {
 
   constructor(private movieService: MovieService) { }
 
-  movieList = new Observable<MovieList>();
+  movieList?: Observable<MovieList>;
 
   searchMovies(query: string) {
+    this.movieListComponent?.startLoading();
     this.movieList = this.movieService.searchMovies(query);
     this.movieList.subscribe(_ => this.movieListComponent?.refreshList());
   }

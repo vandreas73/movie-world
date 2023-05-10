@@ -36,6 +36,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { SeasonsComponent } from './components/tv-shows/tv-details/seasons/seasons.component';
 import { EpisodesComponent } from './components/tv-shows/tv-details/seasons/episodes/episodes.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +61,7 @@ import { EpisodesComponent } from './components/tv-shows/tv-details/seasons/epis
     TvDetailsComponent,
     SeasonsComponent,
     EpisodesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,8 @@ import { EpisodesComponent } from './components/tv-shows/tv-details/seasons/epis
     FormsModule,
     MatInputModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

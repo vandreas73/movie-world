@@ -4,7 +4,7 @@ export class NavigationItems {
     public static searchMovies: string = "search-movies";
     public static movieDetails: string = "movie/:id";
     public static actorDetails: string = "person/:id";
-    public static popularTvSeries: string = "popular-tv";
+    public static popularTvShows: string = "popular-tv";
     public static searchTvs: string = "search-tv";
     public static tvDetails: string = "tv/:id";
 }

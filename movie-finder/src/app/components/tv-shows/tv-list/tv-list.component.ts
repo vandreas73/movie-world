@@ -12,13 +12,22 @@ import { ListCardElement } from '../../list-card/list-card.component';
 export class TvListComponent implements OnInit {
   @Input() tvObservable?: Observable<TvList>;
   tvList?: TvList;
+  loading: boolean = false;
+
   ngOnInit(): void {
     this.refreshList();
+    this.startLoading();
+  }
+
+  startLoading() {
+    if (this.tvObservable)
+      this.loading = true;
   }
 
   refreshList(){
     this.tvObservable?.subscribe(tvList => {
       this.tvList = tvList;
+      this.loading = false;
     });
   }
 

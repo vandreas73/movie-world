@@ -8,13 +8,15 @@ import { ActorDetailsComponent } from './components/actors/actor-details/actor-d
 import { PopularSeriesComponent } from './components/tv-shows/popular-series/popular-series.component';
 import { SearchTvsComponent } from './components/tv-shows/search-tvs/search-tvs.component';
 import { TvDetailsComponent } from './components/tv-shows/tv-details/tv-details.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: "", component: HomeComponent },
   { path: NavigationItems.popularMovies, component: PopularMoviesComponent },
   { path: NavigationItems.searchMovies, component: SearchMoviesComponent },
   { path: NavigationItems.movieDetails, component: MovieDetailsComponent },
   { path: NavigationItems.actorDetails, component:  ActorDetailsComponent},
-  { path: NavigationItems.popularTvSeries, component:  PopularSeriesComponent},
+  { path: NavigationItems.popularTvShows, component:  PopularSeriesComponent},
   { path: NavigationItems.searchTvs, component:  SearchTvsComponent},
   { path: NavigationItems.tvDetails, component:  TvDetailsComponent},
 ];

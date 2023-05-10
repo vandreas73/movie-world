@@ -15,9 +15,16 @@ export class MovieListComponent implements OnInit {
   @Input() cardCount?: number;
   @Input() showCardsFrom: number = 0;
   movieList?: MovieList;
+  loading: boolean = false;
 
   ngOnInit(): void {
     this.refreshList();
+    this.startLoading();
+  }
+
+  startLoading() {
+    if (this.movieObservable)
+      this.loading = true;
   }
 
   refreshList() {
@@ -25,6 +32,7 @@ export class MovieListComponent implements OnInit {
       this.movieList = movieList;
       if (this.cardCount)
         this.movieList.results = movieList.results.slice(this.showCardsFrom, this.showCardsFrom + this.cardCount);
+        this.loading = false;
     });
   }
 
