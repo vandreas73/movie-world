@@ -9,7 +9,8 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./actor-credits.component.scss']
 })
 export class ActorCreditsComponent implements OnInit {
-  credits = {} as ActorCredits;
+  /** The credits of the actor that you want to display */
+  protected credits = {} as ActorCredits;
 
   constructor(private movieService: MovieService,
     private route: ActivatedRoute) { }
@@ -20,7 +21,12 @@ export class ActorCreditsComponent implements OnInit {
     })
   }
 
-  getLink(cast: ActorCreditCast): string {
+  /**
+   * 
+   * @param cast The object that you want to get the link of
+   * @returns The relative link of the movie or series
+   */
+  protected getLink(cast: ActorCreditCast): string {
     switch(cast.media_type){
       case 'movie':
         return `/movie/${cast.id}`;

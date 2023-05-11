@@ -9,7 +9,9 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./popular-movies.component.scss']
 })
 export class PopularMoviesComponent {
-  movieList: Observable<MovieList>;
+  /** The list that you want to display */
+  protected movieList: Observable<MovieList>;
+
   constructor(movieService: MovieService) {
     this.movieList = movieService.getPopular();
   }

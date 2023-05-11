@@ -12,14 +12,16 @@ import { TvListComponent } from '../tv-list/tv-list.component';
 export class SearchTvsComponent {
   @ViewChild(TvListComponent)
   private tvListComponent?: TvListComponent;
+  enableNothingToShow = false;
 
   constructor(private tvService: TvService) { }
 
   tvListObservable?: Observable<TvList>;
 
   search(query: string) {
-    this.tvListComponent?.startLoading();
+    this.tvListComponent?.startLoading(true);
     this.tvListObservable = this.tvService.search(query);
+    this.enableNothingToShow = true;
     this.tvListObservable.subscribe(_ => this.tvListComponent?.refreshList());
   }
 }

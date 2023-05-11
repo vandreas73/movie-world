@@ -1,4 +1,4 @@
-<h2>Similar movies:</h2>
+<h2>Recommended movies:</h2>
 <app-movie-list *ngIf="recommendedMovies" [movieObservable]="recommendedMovies" [cardCount]="4"
     [showCardsFrom]="showCardsFrom"></app-movie-list>
 <mat-paginator [length]="allPagesCount" [pageSize]="4" [hidePageSize]="true" (page)="pageChange($event)">

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TvSeasons } from 'src/app/models/tv-seasons';
+import { TvSeason } from 'src/app/models/tv-seasons';
 import { TvService } from 'src/app/services/tv.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { TvService } from 'src/app/services/tv.service';
   styleUrls: ['./episodes.component.scss']
 })
 export class EpisodesComponent implements OnInit {
-  tvSeasons?: TvSeasons;
+  tvSeasons?: TvSeason;
   @Input() tvId?: number;
   @Input() seasonNumber?: number;
 

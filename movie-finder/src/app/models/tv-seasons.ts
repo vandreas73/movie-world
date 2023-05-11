@@ -1,4 +1,4 @@
-export interface TvSeasons {
+export interface TvSeason {
     _id: string
     air_date: string
     episodes: Episode[]

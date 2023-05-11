@@ -26,7 +26,7 @@ import { ActorsListComponent } from './components/actors/actors-list/actors-list
 import { ActorDetailsComponent } from './components/actors/actor-details/actor-details.component';
 import { ActorCreditsComponent } from './components/actors/actor-details/actor-credits/actor-credits.component';
 import { RecommendedMoviesComponent } from './components/movies/movie-details/recommended-movies/recommended-movies.component';
-import { ListCardComponent } from './components/list-card/list-card.component';
+import { CardElementComponent } from './components/card-element/card-elementcomponent';
 import { ListOfCardsComponent } from './components/list-of-cards/list-of-cards.component';
 import { PopularSeriesComponent } from './components/tv-shows/popular-series/popular-series.component';
 import { TvListComponent } from './components/tv-shows/tv-list/tv-list.component';
@@ -53,7 +53,7 @@ import { HomeComponent } from './components/home/home.component';
     ActorDetailsComponent,
     ActorCreditsComponent,
     RecommendedMoviesComponent,
-    ListCardComponent,
+    CardElementComponent,
     ListOfCardsComponent,
     PopularSeriesComponent,
     TvListComponent,

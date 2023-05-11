@@ -13,7 +13,8 @@ export class ActorDetailsComponent implements OnInit {
   constructor(private movieService: MovieService,
     private route: ActivatedRoute) { }
 
-  actor = {} as Actor;
+    /** The data of the actor that you want to display */
+  protected actor = {} as Actor;
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -21,6 +22,10 @@ export class ActorDetailsComponent implements OnInit {
     })
   }
 
+  /**
+   * 
+   * @returns The link of the current actor's profile picture
+   */
   getProfileImagePath() {
     return this.actor.profile_path ? 'https://image.tmdb.org/t/p/w500' + this.actor.profile_path : '/assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
   }

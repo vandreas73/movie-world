@@ -3,12 +3,12 @@ import { MovieListElement } from 'src/app/models/movie-list-element';
 
 @Component({
   selector: 'app-list-card',
-  templateUrl: './list-card.component.html',
-  styleUrls: ['./list-card.component.scss']
+  templateUrl: './card-element.component.html',
+  styleUrls: ['./card-element.component.scss']
 })
-export class ListCardComponent {
-
-  @Input() cardElement: ListCardElement | undefined;
+export class CardElementComponent {
+  /** The card element that you want to display */
+  @Input() cardElement?: ListCardElement;
 }
 
 export class ListCardElement {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 /**
  * @title Input with a clear button
@@ -11,9 +11,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchComponent {
 
   @Output() newSearch = new EventEmitter<string>();
+  @ViewChild('queryText') queryText?: ElementRef;
 
   search(query: string) {
     this.newSearch.emit(query);
+    this.queryText?.nativeElement.blur();
   }
 }
 

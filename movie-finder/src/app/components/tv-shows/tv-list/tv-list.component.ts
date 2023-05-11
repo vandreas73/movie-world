@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ListOfCardsObject } from '../../list-of-cards/list-of-cards.component';
 import { Observable } from 'rxjs';
 import { TvList } from 'src/app/models/tv-list';
-import { ListCardElement } from '../../list-card/list-card.component';
+import { ListCardElement } from '../../card-element/card-elementcomponent';
 
 @Component({
   selector: 'app-tv-list',
@@ -11,6 +11,7 @@ import { ListCardElement } from '../../list-card/list-card.component';
 })
 export class TvListComponent implements OnInit {
   @Input() tvObservable?: Observable<TvList>;
+  @Input() enableNothingToShow = true;
   tvList?: TvList;
   loading: boolean = false;
 
@@ -19,8 +20,8 @@ export class TvListComponent implements OnInit {
     this.startLoading();
   }
 
-  startLoading() {
-    if (this.tvObservable)
+  startLoading(force = false) {
+    if (force || this.tvObservable)
       this.loading = true;
   }
 

@@ -10,7 +10,7 @@ import { MovieListComponent } from '../movie-list/movie-list.component';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent {
-  movie = {} as MovieDetails;
+  protected movie = {} as MovieDetails;
 
   constructor(
     movieService: MovieService,
@@ -21,23 +21,35 @@ export class MovieDetailsComponent {
     })
   }
 
-  getPosterUrl(): string {
+  /**
+   * 
+   * @returns The url of the movie's poster
+   */
+  protected getPosterUrl(): string {
     return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + this.movie.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
   }
 
-  getGenres(): string {
+  /**
+   *  
+   * @returns The string representation of the movie's genres
+   */
+  protected getGenres(): string {
     return this.movie.genres.map((genre: any) => genre.name).join(', ');
   }
 
-  getProductionCompanies(): string {
+  /**
+   * 
+   * @returns The string representation of the movie's companies
+   */
+  protected getProductionCompanies(): string {
     return this.movie.production_companies.map((company: any) => company.name).join(', ');
   }
 
-  getProductionCountries(): string {
+  /**
+   * 
+   * @returns The string representation of the movie's production countries
+   */
+  protected getProductionCountries(): string {
     return this.movie.production_countries.map((country: any) => country.name).join(', ');
   }
-
-  // getTrailerUrl(): string {
-  //   return 'https://www.youtube.com/watch?v=' + this.movie.videos.results[0].key;
-  // }
 }

@@ -7,5 +7,6 @@ import { NavigationItems } from 'src/app/navigation-items';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  navItems = NavigationItems;
+  /** The navigation items of the app */
+  protected navItems = NavigationItems;
 }

@@ -12,14 +12,22 @@ import { MovieListComponent } from '../movie-list/movie-list.component';
 export class SearchMoviesComponent {
   @ViewChild(MovieListComponent)
   private movieListComponent?: MovieListComponent;
+  /** True: Write "Nothing to show" message if the list is empty. False: no such message */
+  protected enableNothingToShow = false;
+  /** The list that you want to display */
+  protected movieList?: Observable<MovieList>;
 
   constructor(private movieService: MovieService) { }
 
-  movieList?: Observable<MovieList>;
 
-  searchMovies(query: string) {
-    this.movieListComponent?.startLoading();
-    this.movieList = this.movieService.searchMovies(query);
+  /**
+   * Handles the search
+   * @param query The expression to search for
+   */
+  protected searchMovies(query: string): void {
+    this.movieList = this.movieService.search(query);
+    this.movieListComponent?.startLoading(true);
+    this.enableNothingToShow = true;
     this.movieList.subscribe(_ => this.movieListComponent?.refreshList());
   }
 

@@ -11,9 +11,13 @@ import { MovieListComponent } from '../../movie-list/movie-list.component';
   styleUrls: ['./recommended-movies.component.scss']
 })
 export class RecommendedMoviesComponent {
-  recommendedMovies?: Observable<MovieList>;
-  showCardsFrom = 0;
-  allPagesCount = 1;
+  /** The movies that you want to display */
+  protected recommendedMovies?: Observable<MovieList>;
+  /** The index that you want to show the cards from */
+  protected showCardsFrom = 0;
+  /** The count of the pages */
+  protected allPagesCount = 1;
+  
   @ViewChild(MovieListComponent)
   private movieListComponent?: MovieListComponent
 
@@ -27,7 +31,11 @@ export class RecommendedMoviesComponent {
     });
   }
 
-  pageChange(pageEvent: PageEvent) {
+  /**
+   * Handles the next/previous page requests
+   * @param pageEvent the data of the new page
+   */
+  protected pageChange(pageEvent: PageEvent) {
     this.showCardsFrom = pageEvent.pageIndex * 4;
     this.movieListComponent?.refreshList();
   }
