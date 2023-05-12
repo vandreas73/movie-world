@@ -1,7 +1,7 @@
 <h2>Acted:</h2>
 <mat-list *ngFor="let acting of credits.cast">
   <mat-list-item *ngIf="acting.title">
-    <span matListItemTitle><a href="{{getLink(acting)}}">{{acting.title}}</a></span>
+    <span matListItemTitle><a routerLink="{{getLink(acting)}}">{{acting.title}}</a></span>
     <span matListItemLine *ngIf="acting.character">Role: {{acting.character}}</span>
     <span matListItemLine>Type: {{acting.media_type}}</span>
   </mat-list-item>
