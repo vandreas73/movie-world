@@ -18,6 +18,8 @@ export class TvListComponent implements OnInit {
   protected tvList?: TvList;
   /** Whether the loading animation is enabled */
   protected loading: boolean = false;
+  /** If given, the last MovieList value will be saved to local storage with this key */
+  @Input() localStorageKey?: string;
 
   ngOnInit(): void {
     this.refreshList();
@@ -37,10 +39,18 @@ export class TvListComponent implements OnInit {
    * Refreshes the showed list
    */
   refreshList() {
-    this.tvObservable?.subscribe(tvList => {
-      this.tvList = tvList;
-      this.loading = false;
+    if (this.tvObservable) {
+      this.tvObservable?.subscribe(tvList => {
+        this.tvList = tvList;
+        this.loading = false;
+        if (this.localStorageKey)
+          localStorage[this.getLocalStroageKey()] = JSON.stringify(tvList);
     });
+  }
+    else {
+      if (this.localStorageKey && localStorage[this.getLocalStroageKey()])
+        this.tvList = JSON.parse(localStorage[this.getLocalStroageKey()] ?? "");
+    }
   }
 
   /**
@@ -64,5 +74,9 @@ export class TvListComponent implements OnInit {
     });
 
     return listObject;
+  }
+
+  private getLocalStroageKey(): string {
+    return `app-tv-list-${this.localStorageKey}`;
   }
 }

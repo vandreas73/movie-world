@@ -23,6 +23,8 @@ export class MovieListComponent implements OnInit {
   protected movieList?: MovieList;
   /** Whether the loading animation is enabled */
   protected loading: boolean = false;
+  /** If given, the last MovieList value will be saved to local storage with this key */
+  @Input() localStorageKey?: string;
 
   ngOnInit(): void {
     this.refreshList();
@@ -42,12 +44,20 @@ export class MovieListComponent implements OnInit {
    * Refreshes the showed list
    */
   refreshList(): void {
-    this.movieObservable?.subscribe(movieList => {
-      this.movieList = movieList;
-      if (this.cardCount)
-        this.movieList.results = movieList.results.slice(this.showCardsFrom, this.showCardsFrom + this.cardCount);
-      this.loading = false;
-    });
+    if (this.movieObservable) {
+      this.movieObservable?.subscribe(movieList => {
+        this.movieList = movieList;
+        if (this.cardCount)
+          this.movieList.results = movieList.results.slice(this.showCardsFrom, this.showCardsFrom + this.cardCount);
+        this.loading = false;
+        if (this.localStorageKey)
+          localStorage[this.getLocalStroageKey()] = JSON.stringify(movieList);
+      });
+    } 
+    else {
+      if (this.localStorageKey && localStorage[this.getLocalStroageKey()])
+        this.movieList = JSON.parse(localStorage[this.getLocalStroageKey()] ?? "");
+    }
   }
 
   /**
@@ -71,5 +81,9 @@ export class MovieListComponent implements OnInit {
     });
 
     return listObject;
+  }
+
+  private getLocalStroageKey(): string {
+    return `app-movie-list-${this.localStorageKey}`;
   }
 }

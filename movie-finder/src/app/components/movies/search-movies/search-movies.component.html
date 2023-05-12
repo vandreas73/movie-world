@@ -1,2 +1,3 @@
-<app-search (newSearch)="searchMovies($event)"></app-search>
-<app-movie-list [movieObservable]="movieList" [enableNothingToShow]="enableNothingToShow"></app-movie-list>
+<app-search (newSearch)="searchMovies($event)" localStorageKey="movies-search"></app-search>
+<app-movie-list [movieObservable]="movieList" [enableNothingToShow]="enableNothingToShow"
+    localStorageKey="movies-search"></app-movie-list>

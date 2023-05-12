@@ -1,8 +1,8 @@
 <div>
     <mat-form-field class="example-form-field">
         <mat-label>Search here</mat-label>
-        <input matInput type="text" #queryText (keyup.enter)="search(queryText.value)">
-        <button matSuffix mat-icon-button aria-label="Search" (click)="search(queryText.value)" [disabled]="queryText.value == ''">
+        <input matInput type="text" [(ngModel)]="queryText" (keyup.enter)="search(queryText)" #queryInput>
+        <button matSuffix mat-icon-button aria-label="Search" (click)="search(queryText)" [disabled]="queryText == ''">
             <mat-icon>search</mat-icon>
         </button>
     </mat-form-field>

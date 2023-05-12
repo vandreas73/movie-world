@@ -15,7 +15,7 @@
 
 .menu-item {
     width: 300px;
-    height: 200px;
+    height: 100px;
     margin: 20px;
     text-align: center;
     display: flex;
@@ -44,4 +44,8 @@ mat-card-title {
     padding: 10px;
     display: flex;
     justify-content: center;
+}
+
+img {
+    min-width: 300px;
 }
