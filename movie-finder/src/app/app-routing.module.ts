@@ -10,6 +10,9 @@ import { SearchTvsComponent } from './components/tv-shows/search-tvs/search-tvs.
 import { TvDetailsComponent } from './components/tv-shows/tv-details/tv-details.component';
 import { HomeComponent } from './components/home/home.component';
 
+/**
+ * The routes of the app
+ */
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: NavigationItems.popularMovies, component: PopularMoviesComponent },

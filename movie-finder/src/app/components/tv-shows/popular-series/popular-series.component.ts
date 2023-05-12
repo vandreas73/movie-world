@@ -13,5 +13,6 @@ export class PopularSeriesComponent {
     this.tvListObservable = tvService.getPopularTvs();
   }
 
+   /** The list that you want to display */
   tvListObservable: Observable<TvList>;
 }

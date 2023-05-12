@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Sorry, an error occured</h1>
+<div mat-dialog-content>
+  <mat-icon *ngIf="icon" style="margin-right:0.25em;">{{icon | lowercase}}</mat-icon>
+  {{message}}
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

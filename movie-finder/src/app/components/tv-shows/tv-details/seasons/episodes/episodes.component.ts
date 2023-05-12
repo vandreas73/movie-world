@@ -8,13 +8,16 @@ import { TvService } from 'src/app/services/tv.service';
   styleUrls: ['./episodes.component.scss']
 })
 export class EpisodesComponent implements OnInit {
-  tvSeasons?: TvSeason;
+  /** The season that you want to display */
+  protected tvSeason?: TvSeason;
+  /** The TMDB id of the TV show */
   @Input() tvId?: number;
+  /** The number of the season */
   @Input() seasonNumber?: number;
 
   constructor(private tvService: TvService) { }
 
   ngOnInit() {
-    this.tvService.getSeasons(this.tvId!, this.seasonNumber!).subscribe(tvSeasons => this.tvSeasons = tvSeasons);
+    this.tvService.getSeasons(this.tvId!, this.seasonNumber!).subscribe(tvSeasons => this.tvSeason = tvSeasons);
   }
 }

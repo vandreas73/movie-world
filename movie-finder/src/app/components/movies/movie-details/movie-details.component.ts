@@ -10,6 +10,7 @@ import { MovieListComponent } from '../movie-list/movie-list.component';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent {
+  /** The details of the movie that you want to display */
   protected movie = {} as MovieDetails;
 
   constructor(
@@ -39,7 +40,7 @@ export class MovieDetailsComponent {
 
   /**
    * 
-   * @returns The string representation of the movie's companies
+   * @returns The string representation of the movie's production companies
    */
   protected getProductionCompanies(): string {
     return this.movie.production_companies.map((company: any) => company.name).join(', ');

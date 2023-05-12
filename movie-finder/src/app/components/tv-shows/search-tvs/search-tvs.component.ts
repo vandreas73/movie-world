@@ -12,12 +12,17 @@ import { TvListComponent } from '../tv-list/tv-list.component';
 export class SearchTvsComponent {
   @ViewChild(TvListComponent)
   private tvListComponent?: TvListComponent;
+  /** True: Write "Nothing to show" message if the list is empty. False: no such message */
   enableNothingToShow = false;
+  /** The list that you want to display */
+  tvListObservable?: Observable<TvList>;
 
   constructor(private tvService: TvService) { }
 
-  tvListObservable?: Observable<TvList>;
-
+  /**
+   * Handles the search
+   * @param query The expression to search for
+   */
   search(query: string) {
     this.tvListComponent?.startLoading(true);
     this.tvListObservable = this.tvService.search(query);

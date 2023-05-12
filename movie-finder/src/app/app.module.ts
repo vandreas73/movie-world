@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,9 @@ import { SeasonsComponent } from './components/tv-shows/tv-details/seasons/seaso
 import { EpisodesComponent } from './components/tv-shows/tv-details/seasons/episodes/episodes.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HomeComponent } from './components/home/home.component';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ErrorHandlerService } from './error-handler.service';
 
 
 @NgModule({
@@ -62,6 +65,7 @@ import { HomeComponent } from './components/home/home.component';
     SeasonsComponent,
     EpisodesComponent,
     HomeComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,9 +85,10 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [{ provide: ErrorHandler, useClass: ErrorHandlerService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

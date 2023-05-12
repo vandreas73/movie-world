@@ -10,5 +10,6 @@ import { TvService } from 'src/app/services/tv.service';
   styleUrls: ['./seasons.component.scss']
 })
 export class SeasonsComponent {
+  /** The details of the TV show that you want to display */
   @Input() tvDetails?: TvDetails;
 }

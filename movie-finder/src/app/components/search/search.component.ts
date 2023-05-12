@@ -9,11 +9,12 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-
+  /** Emits if search is requested */
   @Output() newSearch = new EventEmitter<string>();
-  @ViewChild('queryText') queryText?: ElementRef;
+  @ViewChild('queryText') private queryText?: ElementRef;
 
-  search(query: string) {
+  /** Handles the search request */
+  protected search(query: string): void {
     this.newSearch.emit(query);
     this.queryText?.nativeElement.blur();
   }

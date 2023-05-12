@@ -12,7 +12,10 @@ import { NavigationItems } from './../../navigation-items';
 export class NavigationComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  /**
+   * @returns Whether the width of device is optimized for Handset (mobile) or not
+   */
+  protected isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()

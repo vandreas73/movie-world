@@ -11,34 +11,43 @@ import { TvService } from 'src/app/services/tv.service';
   styleUrls: ['./tv-details.component.scss']
 })
 export class TvDetailsComponent {
-  tv = {} as TvDetails;
+  /** The details of the TV show that you want to display */
+  protected tv = {} as TvDetails;
 
-  constructor(
-    tvService: TvService,
-    private route: ActivatedRoute
-  ) {
+  constructor(tvService: TvService, private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
       tvService.getDetails(params['id']).subscribe(tv => this.tv = tv);
     })
   }
-
-  getPosterUrl(): string {
+  /**
+   * 
+   * @returns The url of the TV show's poster
+   */
+  protected getPosterUrl(): string {
     return this.tv.poster_path ? 'https://image.tmdb.org/t/p/w500' + this.tv.poster_path : 'assets/movie_FILL0_wght400_GRAD0_opsz48.svg';
   }
 
-  getGenres(): string {
+  /**
+   *  
+   * @returns The string representation of the TV show's genres
+   */
+  protected getGenres(): string {
     return this.tv.genres.map((genre: any) => genre.name).join(', ');
   }
 
-  getProductionCompanies(): string {
+  /**
+   * 
+   * @returns The string representation of the TV show's production companies
+   */
+  protected getProductionCompanies(): string {
     return this.tv.production_companies.map((company: any) => company.name).join(', ');
   }
 
-  getProductionCountries(): string {
+  /**
+   * 
+   * @returns The string representation of the TV show's production countries
+   */
+  protected getProductionCountries(): string {
     return this.tv.production_countries.map((country: any) => country.name).join(', ');
   }
-
-  // getTrailerUrl(): string {
-  //   return 'https://www.youtube.com/watch?v=' + this.movie.videos.results[0].key;
-  // }
 }
