@@ -1,7 +1,7 @@
 <h2>Actors:</h2>
 <mat-list>
   <mat-list-item *ngFor="let actor of credits.cast">
-    <span matListItemTitle><a routerLink="person/{{actor.id}}">{{actor.name}}</a></span>
+    <span matListItemTitle><a routerLink="/person/{{actor.id}}">{{actor.name}}</a></span>
     <span matListItemLine *ngIf="actor.character">Role: {{actor.character}}</span>
   </mat-list-item>
 </mat-list>
