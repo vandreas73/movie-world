@@ -5,11 +5,11 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="">Home</a>
-      <a mat-list-item routerLink="{{navItems.popularMovies}}">Popular Movies</a>
-      <a mat-list-item routerLink="{{navItems.searchMovies}}">Search Movies</a>
-      <a mat-list-item routerLink="{{navItems.popularTvShows}}">Popular TV Shows</a>
-      <a mat-list-item routerLink="{{navItems.searchTvs}}">Search TV Shows</a>
+      <a mat-list-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a mat-list-item routerLink="{{navItems.popularMovies}}" routerLinkActive="active">Popular Movies</a>
+      <a mat-list-item routerLink="{{navItems.searchMovies}}" routerLinkActive="active">Search Movies</a>
+      <a mat-list-item routerLink="{{navItems.popularTvShows}}" routerLinkActive="active">Popular TV Shows</a>
+      <a mat-list-item routerLink="{{navItems.searchTvs}}" routerLinkActive="active">Search TV Shows</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

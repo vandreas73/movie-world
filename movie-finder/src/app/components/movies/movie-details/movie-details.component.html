@@ -23,7 +23,7 @@
                     <span class="movie-info-label">Overview:</span>
                     <span class="movie-info-value">{{ movie.overview }}</span>
                 </div>
-                <div class="movie-info-row" *ngIf="movie.overview">
+                <div class="movie-info-row" *ngIf="movie.imdb_id">
                     <a href="https://www.imdb.com/title/{{ movie.imdb_id }}/" target="_blank" mat-raised-button>View on
                         IMDB</a>
                 </div>
