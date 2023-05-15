@@ -2,7 +2,7 @@
     <div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="listObject">
         <div fxFlex.xs="100%" fxFlex.sm="33%" fxFlex.md="25%" fxFlex.lg="20%" fxFlex.xl="15%" 
         *ngFor="let cardElement of listObject?.results">
-            <a routerLink="{{cardElement.url_path}}">
+            <a href="../{{cardElement.url_path}}">
                 <app-list-card [cardElement]="cardElement"></app-list-card>
             </a>
         </div>
